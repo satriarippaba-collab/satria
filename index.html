@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HoopNation - Elevate Your Game</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Montserrat & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        hoop: {
+                            orange: '#FF5500',
+                            orangeDark: '#D94800',
+                            dark: '#0B0F17',
+                            card: '#161F30',
+                            border: '#243047'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0B0F17;
+            color: #F3F4F6;
+        }
+        .font-heading {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(255, 85, 0, 0.15) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #FF7733 0%, #FF5500 50%, #FF2200 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-card {
+            background: rgba(22, 31, 48, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card:hover {
+            border-color: rgba(255, 85, 0, 0.4);
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-200 overflow-x-hidden selection:bg-hoop-orange selection:text-white">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-hoop-dark/90 backdrop-blur-md border-b border-hoop-border/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-hoop-orange to-amber-500 flex items-center justify-center text-white text-xl shadow-lg shadow-hoop-orange/30 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid font-bold fa-basketball"></i>
+                    </div>
+                    <span class="font-heading text-2xl font-black tracking-wider text-white">HOOP<span class="text-hoop-orange">NATION</span></span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#fitur" class="hover:text-hoop-orange transition-colors">Keunggulan</a>
+                    <a href="#program" class="hover:text-hoop-orange transition-colors">Program</a>
+                    <a href="#statistik" class="hover:text-hoop-orange transition-colors">Statistik</a>
+                    <a href="#testimoni" class="hover:text-hoop-orange transition-colors">Testimoni</a>
+                    <a href="#daftar" class="bg-hoop-orange hover:bg-hoop-orangeDark text-white px-5 py-2.5 rounded-full font-semibold shadow-lg shadow-hoop-orange/20 hover:shadow-hoop-orange/40 transition-all">
+                        Gabung Sekarang
+                    </a>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn" type="button" class="md:hidden text-gray-300 hover:text-white focus:outline-none p-2 rounded-lg" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-hoop-card border-b border-hoop-border px-4 pt-2 pb-6 space-y-3">
+            <a href="#fitur" class="block py-2 text-base font-medium text-gray-300 hover:text-hoop-orange mobile-link">Keunggulan</a>
+            <a href="#program" class="block py-2 text-base font-medium text-gray-300 hover:text-hoop-orange mobile-link">Program</a>
+            <a href="#statistik" class="block py-2 text-base font-medium text-gray-300 hover:text-hoop-orange mobile-link">Statistik</a>
+            <a href="#testimoni" class="block py-2 text-base font-medium text-gray-300 hover:text-hoop-orange mobile-link">Testimoni</a>
+            <a href="#daftar" class="block text-center bg-hoop-orange hover:bg-hoop-orangeDark text-white py-3 rounded-xl font-semibold mt-4 mobile-link">
+                Gabung Sekarang
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 md:pt-44 md:pb-32 bg-grid-pattern overflow-hidden">
+        <!-- Glow accents -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-hoop-orange/15 rounded-full blur-[120px] pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Hero Content -->
+                <div class="lg:col-span-7 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-hoop-orange/10 border border-hoop-orange/30 px-4 py-2 rounded-full mb-6">
+                        <span class="w-2.5 h-2.5 rounded-full bg-hoop-orange animate-ping"></span>
+                        <span class="text-xs font-bold uppercase tracking-wider text-hoop-orange">Pendaftaran Musim Baru Dibuka</span>
+                    </div>
+
+                    <h1 class="font-heading text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tight text-white leading-none mb-6">
+                        Dominate <br class="hidden sm:inline" />
+                        <span class="gradient-text">The Court</span> Today
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0 mb-8 font-normal leading-relaxed">
+                        Akademi basket profesional untuk mengasah *skill*, mental juara, dan fisik bertaraf internasional. Dari pemula hingga calon atlet profesional!
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#daftar" class="w-full sm:w-auto bg-hoop-orange hover:bg-hoop-orangeDark text-white px-8 py-4 rounded-xl font-bold text-lg text-center shadow-xl shadow-hoop-orange/25 hover:shadow-hoop-orange/40 hover:-translate-y-0.5 transition-all">
+                            Gabung Sekarang <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                        <a href="#program" class="w-full sm:w-auto glass-card hover:bg-hoop-card text-white px-8 py-4 rounded-xl font-semibold text-lg text-center transition-all">
+                            Lihat Program
+                        </a>
+                    </div>
+
+                    <!-- Quick Highlights -->
+                    <div class="mt-12 pt-8 border-t border-hoop-border/60 flex flex-wrap justify-center lg:justify-start gap-8 text-sm text-gray-400">
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-circle-check text-hoop-orange"></i>
+                            <span>Pelatih Berlisensi FIBA</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-circle-check text-hoop-orange"></i>
+                            <span>Lapangan Indoor Standar NBA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Visual / Card Showcase -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Main Card -->
+                        <div class="glass-card rounded-3xl p-6 sm:p-8 shadow-2xl relative z-10">
+                            <div class="relative rounded-2xl overflow-hidden aspect-[4/3] bg-hoop-card mb-6 group">
+                                <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=800&q=80" 
+                                     alt="Basketball Player" 
+                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                     onerror="this.src='https://placehold.co/800x600/161F30/FFFFFF?text=HoopNation+Academy'">
+                                <div class="absolute inset-0 bg-gradient-to-t from-hoop-dark/80 via-transparent to-transparent"></div>
+                                <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white">
+                                    <span class="bg-hoop-orange text-xs font-bold px-3 py-1 rounded-full uppercase">Latihan Rutin</span>
+                                    <span class="text-xs font-medium bg-black/50 backdrop-blur-sm px-2.5 py-1 rounded-md"><i class="fa-solid fa-location-dot text-hoop-orange mr-1"></i> Jakarta Center</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="font-heading font-bold text-lg text-white">Latihan Dribble & Shooting</h3>
+                                    <p class="text-xs text-gray-400">Setiap Selasa & Kamis • 16:00 WIB</p>
+                                </div>
+                                <div class="w-10 h-10 rounded-full bg-hoop-orange/20 text-hoop-orange flex items-center justify-center">
+                                    <i class="fa-solid fa-bolt"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Accent Badge -->
+                        <div class="absolute -bottom-6 -left-6 glass-card p-4 rounded-2xl shadow-xl z-20 hidden sm:flex items-center space-x-3 border-hoop-orange/30">
+                            <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-500 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-trophy"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-400 font-medium">Prestasi Akademi</p>
+                                <p class="font-heading font-bold text-white text-sm">25+ Trofi Kejuaraan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features / Why Choose Us -->
+    <section id="fitur" class="py-20 bg-hoop-dark border-t border-hoop-border/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-hoop-orange uppercase tracking-widest mb-3">Mengapa HoopNation?</h2>
+                <p class="font-heading text-3xl sm:text-5xl font-extrabold text-white uppercase">Fasilitas & Pelatihan Terbaik</p>
+                <p class="text-gray-400 mt-4 text-base">Kami menyediakan ekosistem terlengkap untuk mendukung perkembangan atlet secara optimal.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-hoop-orange/10 border border-hoop-orange/30 text-hoop-orange flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-user-ninja"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-white mb-3">Pelatih Profesional</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Dibimbing oleh mantan pemain profesional dan pelatih terlisensi FIBA dengan kurikulum modern.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-hoop-orange/10 border border-hoop-orange/30 text-hoop-orange flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-white mb-3">Lapangan Indoor FIBA</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        4 Lapangan kayu *hardwood* berpendingin ruangan dengan pencahayaan dan ring standar internasional.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-hoop-orange/10 border border-hoop-orange/30 text-hoop-orange flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-medal"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-white mb-3">Kompetisi Rutin</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Kesempatan bertanding di liga internal serta turnamen nasional dan internasional.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-hoop-orange/10 border border-hoop-orange/30 text-hoop-orange flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-white mb-3">Analisis Performa</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Rapor perkembangan statistik pribadi, video analisis gerakan, dan manajemen nutrisi atlet.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats / Impact Bar -->
+    <section id="statistik" class="py-16 bg-gradient-to-r from-hoop-card via-hoop-dark to-hoop-card border-y border-hoop-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <div class="p-4">
+                    <p class="font-heading text-4xl sm:text-5xl font-black text-hoop-orange mb-2">500+</p>
+                    <p class="text-sm font-medium text-gray-300 uppercase tracking-wider">Atlet Aktif</p>
+                </div>
+                <div class="p-4">
+                    <p class="font-heading text-4xl sm:text-5xl font-black text-white mb-2">25+</p>
+                    <p class="text-sm font-medium text-gray-300 uppercase tracking-wider">Turnamen Dimenangi</p>
+                </div>
+                <div class="p-4">
+                    <p class="font-heading text-4xl sm:text-5xl font-black text-hoop-orange mb-2">12+</p>
+                    <p class="text-sm font-medium text-gray-300 uppercase tracking-wider">Pelatih Berlisensi</p>
+                </div>
+                <div class="p-4">
+                    <p class="font-heading text-4xl sm:text-5xl font-black text-white mb-2">4</p>
+                    <p class="text-sm font-medium text-gray-300 uppercase tracking-wider">Lapangan Standar FIBA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="program" class="py-24 bg-hoop-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-hoop-orange uppercase tracking-widest mb-3">Pilihan Program</h2>
+                <p class="font-heading text-3xl sm:text-5xl font-extrabold text-white uppercase">Program Latihan Sesuai Usia</p>
+                <p class="text-gray-400 mt-4 text-base">Pilih kelompok usia dan tingkat keahlian yang sesuai dengan tujuan bermainmu.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Program 1 -->
+                <div class="glass-card rounded-3xl p-8 flex flex-col justify-between hover:border-hoop-orange transition-all relative group">
+                    <div>
+                        <div class="flex justify-between items-center mb-6">
+                            <span class="bg-blue-500/10 text-blue-400 border border-blue-500/30 text-xs font-bold px-3 py-1 rounded-full uppercase">Pemula & Usia Dini</span>
+                            <i class="fa-solid fa-child text-2xl text-gray-400 group-hover:text-hoop-orange transition-colors"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold text-white mb-2">Youth Academy</h3>
+                        <p class="text-xs text-gray-400 mb-6">Usia 7 - 15 Tahun (U-10, U-12, U-15)</p>
+                        
+                        <p class="text-gray-300 text-sm mb-6 leading-relaxed">
+                            Fokus pada fundamental basket, kelincahan, kerja sama tim, dan membangun kesenangan dalam berolahraga.
+                        </p>
+
+                        <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-hoop-orange mr-3"></i> 2x Latihan per Minggu</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-hoop-orange mr-3"></i> Fundamental Dribble & Passing</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-hoop-orange mr-3"></i> Jersey Latihan Resmi</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div class="border-t border-hoop-border pt-6 mb-6">
+                            <span class="text-3xl font-heading font-black text-white">Rp 750rb</span>
+                            <span class="text-gray-400 text-sm"> / bulan</span>
+                        </div>
+                        <a href="#daftar" onclick="selectProgram('Youth Academy')" class="block text-center w-full py-3 rounded-xl border border-hoop-orange text-hoop-orange font-bold hover:bg-hoop-orange hover:text-white transition-all">
+                            Pilih Program
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Program 2 (Featured) -->
+                <div class="glass-card rounded-3xl p-8 flex flex-col justify-between border-2 border-hoop-orange relative group shadow-2xl shadow-hoop-orange/10 transform lg:-translate-y-4">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-hoop-orange text-white text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
+                        Paling Populer
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between items-center mb-6 mt-2">
+                            <span class="bg-hoop-orange/20 text-hoop-orange border border-hoop-orange/40 text-xs font-bold px-3 py-1 rounded-full uppercase">Intensif Competitor</span>
+                            <i class="fa-solid fa-basketball text-2xl text-hoop-orange"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold text-white mb-2">Pro Prep Academy</h3>
+                        <p class="text-xs text-gray-400 mb-6">Usia 16 - 22 Tahun (U-18 & Mahasiswa)</p>
+                        
+                        <p class="text-gray-300 text-sm mb-6 leading-relaxed">
+                            Program intensif untuk persiapan turnamen, DBL, liga mahasiswa, dan jalur atlet profesional.
+                        </p>
+
+                        <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-hoop-orange mr-3"></i> 3x Latihan + 1x Sparring/Bulan</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-hoop-orange mr-3"></i> Takti Strategi & Fitnes Fisik</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-hoop-orange mr-3"></i> Video Analytics & Rapor Pemain</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div class="border-t border-hoop-border pt-6 mb-6">
+                            <span class="text-3xl font-heading font-black text-white">Rp 1.200rb</span>
+                            <span class="text-gray-400 text-sm"> / bulan</span>
+                        </div>
+                        <a href="#daftar" onclick="selectProgram('Pro Prep Academy')" class="block text-center w-full py-3 rounded-xl bg-hoop-orange text-white font-bold hover:bg-hoop-orangeDark shadow-lg shadow-hoop-orange/30 transition-all">
+                            Pilih Program
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Program 3 -->
+                <div class="glass-card rounded-3xl p-8 flex flex-col justify-between hover:border-hoop-orange transition-all relative group">
+                    <div>
+                        <div class="flex justify-between items-center mb-6">
+                            <span class="bg-purple-500/10 text-purple-400 border border-purple-500/30 text-xs font-bold px-3 py-1 rounded-full uppercase">Privat / Dewasa</span>
+                            <i class="fa-solid fa-user-gear text-2xl text-gray-400 group-hover:text-hoop-orange transition-colors"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold text-white mb-2">1-on-1 Personal Training</h3>
+                        <p class="text-xs text-gray-400 mb-6">Semua Usia / Komunitas Dewasa</p>
+                        
+                        <p class="text-gray-300 text-sm mb-6 leading-relaxed">
+                            Latihan privat secara kustom fokus memperbaiki teknik *shooting*, *footwork*, atau *skills* khusus.
+                        </p>
+
+                        <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-hoop-orange mr-3"></i> Pelatih Khusus Personal</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-hoop-orange mr-3"></i> Jadwal Fleksibel Sesuai Request</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-hoop-orange mr-3"></i> Evaluasi *Drill* Mendalam</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div class="border-t border-hoop-border pt-6 mb-6">
+                            <span class="text-3xl font-heading font-black text-white">Rp 350rb</span>
+                            <span class="text-gray-400 text-sm"> / sesi</span>
+                        </div>
+                        <a href="#daftar" onclick="selectProgram('1-on-1 Personal Training')" class="block text-center w-full py-3 rounded-xl border border-hoop-orange text-hoop-orange font-bold hover:bg-hoop-orange hover:text-white transition-all">
+                            Pilih Program
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / Highlights -->
+    <section id="testimoni" class="py-20 bg-hoop-dark border-t border-hoop-border/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-hoop-orange uppercase tracking-widest mb-3">Kata Mereka</h2>
+                <p class="font-heading text-3xl sm:text-4xl font-extrabold text-white uppercase">Testimoni Atlet & Orang Tua</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="glass-card p-8 rounded-2xl relative">
+                    <div class="flex text-amber-400 text-sm mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-6 italic">
+                        "Sejak bergabung di HoopNation, perkembangan anak saya luar biasa. Tidak hanya skill dribble dan shooting, tapi disiplin dan rasa percaya dirinya meningkat pesat!"
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-11 h-11 rounded-full bg-hoop-orange/20 flex items-center justify-center font-bold text-hoop-orange">
+                            B
+                        </div>
+                        <div>
+                            <h4 class="font-heading font-bold text-white text-sm">Budi Santoso</h4>
+                            <p class="text-xs text-gray-400">Orang Tua Murid U-12</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="glass-card p-8 rounded-2xl relative">
+                    <div class="flex text-amber-400 text-sm mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-6 italic">
+                        "Fasilitas lapangannya sangat bagus dan pelatih selalu memberikan evaluasi detail. Program Pro Prep benar-benar membantu saya tembus tim utama SMA!"
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-11 h-11 rounded-full bg-hoop-orange/20 flex items-center justify-center font-bold text-hoop-orange">
+                            R
+                        </div>
+                        <div>
+                            <h4 class="font-heading font-bold text-white text-sm">Rian Ardiansyah</h4>
+                            <p class="text-xs text-gray-400">Pemain U-18 (Pro Prep)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="glass-card p-8 rounded-2xl relative">
+                    <div class="flex text-amber-400 text-sm mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-6 italic">
+                        "Latihan 1-on-1 privat sangat efisien. Pelatih paham kekuranganku di footwork dan langsung memberikan drill khusus. Sangat recommended!"
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-11 h-11 rounded-full bg-hoop-orange/20 flex items-center justify-center font-bold text-hoop-orange">
+                            D
+                        </div>
+                        <div>
+                            <h4 class="font-heading font-bold text-white text-sm">Dina Amanda</h4>
+                            <p class="text-xs text-gray-400">Peserta Personal Training</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action / Registration Form Section -->
+    <section id="daftar" class="py-24 bg-gradient-to-b from-hoop-dark to-hoop-card relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Text info -->
+                <div class="lg:col-span-5">
+                    <span class="text-hoop-orange font-bold text-sm uppercase tracking-wider">Mulai Perjalananmu</span>
+                    <h2 class="font-heading text-3xl sm:text-5xl font-black text-white uppercase mt-2 mb-6">
+                        Siap Bertanding di Level Berikutnya?
+                    </h2>
+                    <p class="text-gray-300 text-base leading-relaxed mb-8">
+                        Isi formulir pendaftaran sekarang untuk mendapatkan **1x Trial Session GRATIS** dan konsultasi langsung dengan tim pelatih utama kami.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-hoop-orange/20 text-hoop-orange flex items-center justify-center">
+                                <i class="fa-solid fa-gift"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold text-sm">Satu Kali Free Trial</h4>
+                                <p class="text-xs text-gray-400">Coba fasilitas dan gaya latihan kami tanpa biaya.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-hoop-orange/20 text-hoop-orange flex items-center justify-center">
+                                <i class="fa-solid fa-shirt"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold text-sm">Gratis Jersey Akademi</h4>
+                                <p class="text-xs text-gray-400">Khusus pendaftaran paket 3 bulan pertama.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Registration Form Card -->
+                <div class="lg:col-span-7">
+                    <div class="glass-card p-8 sm:p-10 rounded-3xl border border-hoop-border shadow-2xl">
+                        <h3 class="font-heading text-2xl font-bold text-white mb-6">Formulir Pendaftaran Fast-Track</h3>
+                        
+                        <form id="registration-form" class="space-y-5">
+                            <div>
+                                <label for="fullname" class="block text-xs font-semibold text-gray-300 uppercase mb-2">Nama Lengkap</label>
+                                <input type="text" id="fullname" required placeholder="Contoh: Budi Pratama" class="w-full bg-hoop-dark border border-hoop-border rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-hoop-orange transition-colors">
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label for="email" class="block text-xs font-semibold text-gray-300 uppercase mb-2">Email</label>
+                                    <input type="email" id="email" required placeholder="email@domain.com" class="w-full bg-hoop-dark border border-hoop-border rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-hoop-orange transition-colors">
+                                </div>
+                                <div>
+                                    <label for="whatsapp" class="block text-xs font-semibold text-gray-300 uppercase mb-2">Nomor WhatsApp</label>
+                                    <input type="tel" id="whatsapp" required placeholder="08123456789" class="w-full bg-hoop-dark border border-hoop-border rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-hoop-orange transition-colors">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="program-select" class="block text-xs font-semibold text-gray-300 uppercase mb-2">Pilihan Program Latihan</label>
+                                <select id="program-select" required class="w-full bg-hoop-dark border border-hoop-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-hoop-orange transition-colors">
+                                    <option value="" disabled selected>-- Pilih Program --</option>
+                                    <option value="Youth Academy">Youth Academy (Usia 7-15 Thn)</option>
+                                    <option value="Pro Prep Academy">Pro Prep Academy (Usia 16-22 Thn)</option>
+                                    <option value="1-on-1 Personal Training">1-on-1 Personal Training</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="w-full bg-hoop-orange hover:bg-hoop-orangeDark text-white font-bold py-4 rounded-xl shadow-lg shadow-hoop-orange/30 transition-all text-base tracking-wide uppercase mt-2">
+                                Kirim & Klaim Free Trial <i class="fa-solid fa-paper-plane ml-2"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-hoop-dark border-t border-hoop-border/60 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                <!-- Brand Info -->
+                <div class="md:col-span-1">
+                    <a href="#" class="flex items-center space-x-3 mb-4">
+                        <div class="w-9 h-9 rounded-xl bg-hoop-orange flex items-center justify-center text-white text-lg font-bold">
+                            <i class="fa-solid fa-basketball"></i>
+                        </div>
+                        <span class="font-heading text-xl font-black text-white">HOOP<span class="text-hoop-orange">NATION</span></span>
+                    </a>
+                    <p class="text-xs text-gray-400 leading-relaxed mb-6">
+                        Akademi bola basket modern yang membentuk karakter, teknik, dan fisik atlet muda menuju jenjang profesional.
+                    </p>
+                    <div class="flex space-x-3 text-gray-400">
+                        <a href="#" class="w-9 h-9 rounded-full bg-hoop-card flex items-center justify-center hover:bg-hoop-orange hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-hoop-card flex items-center justify-center hover:bg-hoop-orange hover:text-white transition-colors"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-hoop-card flex items-center justify-center hover:bg-hoop-orange hover:text-white transition-colors"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <div>
+                    <h4 class="font-heading font-bold text-white text-sm mb-4 uppercase">Navigasi</h4>
+                    <ul class="space-y-2 text-xs text-gray-400">
+                        <li><a href="#fitur" class="hover:text-hoop-orange transition-colors">Keunggulan</a></li>
+                        <li><a href="#program" class="hover:text-hoop-orange transition-colors">Program Akademi</a></li>
+                        <li><a href="#statistik" class="hover:text-hoop-orange transition-colors">Pencapaian</a></li>
+                        <li><a href="#testimoni" class="hover:text-hoop-orange transition-colors">Testimoni</a></li>
+                    </ul>
+                </div>
+
+                <!-- Schedule & Hours -->
+                <div>
+                    <h4 class="font-heading font-bold text-white text-sm mb-4 uppercase">Jam Operasional</h4>
+                    <ul class="space-y-2 text-xs text-gray-400">
+                        <li class="flex justify-between"><span>Senin - Jumat:</span> <span class="text-white">14:00 - 21:00</span></li>
+                        <li class="flex justify-between"><span>Sabtu - Minggu:</span> <span class="text-white">08:00 - 20:00</span></li>
+                        <li class="mt-2 text-hoop-orange font-medium">Buka Setiap Hari untuk Member</li>
+                    </ul>
+                </div>
+
+                <!-- Location / Contact -->
+                <div>
+                    <h4 class="font-heading font-bold text-white text-sm mb-4 uppercase">Lokasi Arena</h4>
+                    <p class="text-xs text-gray-400 leading-relaxed mb-3">
+                        <i class="fa-solid fa-location-dot text-hoop-orange mr-2"></i>
+                        Sudirman sport Kabupaten garut J.L Pahlawan
+                    </p>
+                    <p class="text-xs text-gray-400">
+                        <i class="fa-solid fa-phone text-hoop-orange mr-2"></i>
+                        +62 812-3456-7890
+                    </p>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="border-t border-hoop-border/40 pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500">
+                <p>&copy; 2026 HoopNation Basketball Academy. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 sm:mt-0">
+                    <a href="#" class="hover:text-gray-400">Syarat & Ketentuan</a>
+                    <a href="#" class="hover:text-gray-400">Kebijakan Privasi</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal Notification -->
+    <div id="modal-success" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+        <div class="glass-card max-w-sm w-full p-6 rounded-3xl text-center border-hoop-orange/50 shadow-2xl transform scale-95 transition-transform duration-300" id="modal-card">
+            <div class="w-16 h-16 rounded-full bg-hoop-orange/20 text-hoop-orange flex items-center justify-center text-3xl mx-auto mb-4">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-white mb-2">Pendaftaran Berhasil!</h3>
+            <p class="text-sm text-gray-300 mb-6">
+                Terima kasih telah mendaftar. Tim HoopNation akan menghubungi WhatsApp kamu dalam kurun 1x24 jam untuk konfirmasi jadwal Free Trial.
+            </p>
+            <button onclick="closeModal()" class="w-full bg-hoop-orange hover:bg-hoop-orangeDark text-white font-bold py-3 rounded-xl transition-all">
+                Mengerti
+            </button>
+        </div>
+    </div>
+
+    <!-- Interactive Logic JavaScript -->
+    <script>
+        // Mobile Navigation Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuBtn.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // Program Auto Select from Pricing Cards
+        function selectProgram(programName) {
+            const selectElement = document.getElementById('program-select');
+            if (selectElement) {
+                selectElement.value = programName;
+            }
+        }
+
+        // Form Handling & Modal Interactivity
+        const regForm = document.getElementById('registration-form');
+        const modal = document.getElementById('modal-success');
+        const modalCard = document.getElementById('modal-card');
+
+        regForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Display Success Modal
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalCard.classList.remove('scale-95');
+                modalCard.classList.add('scale-100');
+            }, 10);
+
+            // Reset form
+            regForm.reset();
+        });
+
+        function closeModal() {
+            modal.classList.add('opacity-0');
+            modalCard.classList.remove('scale-100');
+            modalCard.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        // Close Modal when clicking outside
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
